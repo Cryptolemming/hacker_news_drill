@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import StoriesContainer from './StoriesContainer';
 
 export default () => {
