@@ -22,7 +22,7 @@ export class StoriesContainer extends Component {
   }
 
   render() {
-    console.log('stories ' + this.props.stories);
+    console.log('stories ' + JSON.stringify(this.props.stories));
 
     return (
       <section role='contentinfo' className='stories-container'>
