@@ -14,7 +14,7 @@ export default class Story extends Component {
     this.renderComments = this.renderComments.bind(this);
   }
 
-  handleToggleExpand() {
+  handleToggleExpand(e) {
     this.setState({
       expanded: !this.state.expanded
     })
@@ -22,13 +22,13 @@ export default class Story extends Component {
 
   renderComments() {
     return this.state.expanded
-      ? <CommentsContainer storyId={this.props.story.id} comments={this.props.story.comments} />
+      ? <CommentsContainer storyId={this.props.story.id} commentIds={this.props.story.comments} />
       : '';
   }
 
   render() {
     return (
-      <li className='story-list-item' onClick={() => this.handleToggleExpand()}>
+      <li className='story-list-item' onClick={(e) => this.handleToggleExpand(e)}>
         <a href={`${this.props.story.url}`} className='story-url'>
           <h3 className='story-title'>{this.props.story.title}</h3>
         </a>

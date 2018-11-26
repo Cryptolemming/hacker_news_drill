@@ -3,7 +3,7 @@ import './Comment.css';
 
 export default props => {
   const comment = props.comment;
-  const backgroundColor = props.idx % 2 === 0 ? 'dark' : 'light';
+  const backgroundColor = props.idx % 2 === 0 ? ' dark' : ' light';
   return (
     <li className={`comment-list-item${backgroundColor}`}>
       <span className='comment-author'>{comment.author}</span>

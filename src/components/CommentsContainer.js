@@ -29,18 +29,20 @@ export class CommentsContainer extends Component {
 
   render() {
     return (
-      <ul className='comments-list'>
-        {this.renderComments()}
-      </ul>
+      <section className='comments-container'>
+        <ul className='comments-list'>
+          {this.renderComments()}
+        </ul>
+      </section>
     )
   }
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  commentIds: ownProps.comments,
+  commentIds: ownProps.commentIds,
   storyId: ownProps.storyId,
-  comments: state.comments[ownProps.comments[0]] !==  undefined ?
-    ownProps.comments.map(commentId => state.comments[commentId]) : [],
+  comments: state.comments[ownProps.commentIds[0]] !==  undefined ?
+    ownProps.commentIds.map(commentId => state.comments[commentId]) : [],
 })
 
 export default connect(mapStateToProps)(CommentsContainer);
