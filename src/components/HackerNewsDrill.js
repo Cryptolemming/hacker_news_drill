@@ -1,0 +1,16 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import StoriesContainer from './StoriesContainer';
+
+export default () => {
+  return (
+    <>
+      <header role='banner'>
+        <h1 role='heading'>Hacker News Drill</h1>
+      </header>
+      <main role='main'>
+        <StoriesContainer />
+      </main>
+    </>
+  )
+}
