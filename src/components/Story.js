@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CommentsContainer from './CommentsContainer';
+import './Story.css';
 
 export default class Story extends Component {
   constructor(props) {
@@ -27,8 +28,8 @@ export default class Story extends Component {
 
   render() {
     return (
-      <li className='story-list-item' onClick={this.handleToggleExpand}>
-        <a className='story-link'>
+      <li className='story-list-item' onClick={() => this.handleToggleExpand()}>
+        <a href={`${this.props.story.url}`} className='story-url'>
           <h3 className='story-title'>{this.props.story.title}</h3>
         </a>
         <span className='story-author'>{this.props.story.author}</span>

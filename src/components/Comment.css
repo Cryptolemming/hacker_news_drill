@@ -1,0 +1,18 @@
+.comment-list-item {
+  padding-top: 25px;
+  word-wrap: break-word;
+  width: 100%;
+  padding: 10px 25px;
+}
+
+.comment-text {
+  font-size: 14px;
+}
+
+.dark {
+  background: #d3d3d3;
+}
+
+.light {
+  background: white;
+}

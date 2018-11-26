@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchTopStoryIds } from '../actions';
 import Story from './Story';
 import uuid from 'uuid/v4';
+import './StoriesContainer.css';
 
 export class StoriesContainer extends Component {
   constructor(props) {

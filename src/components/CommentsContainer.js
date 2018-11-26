@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Comment from './Comment';
 import { fetchTopComments } from '../actions';
 import uuid from 'uuid/v4';
+import './CommentsContainer.css';
 
 export class CommentsContainer extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export class CommentsContainer extends Component {
   }
 
   componentDidMount() {
-    if (this.props.comments.length === 0) {
+    if (this.props.comments.length === 0 || this.props.comments[0].loading) {
       this.props.dispatch(fetchTopComments(this.props.commentIds, this.props.storyId));
     }
   }
@@ -21,14 +22,14 @@ export class CommentsContainer extends Component {
     if (this.props.comments.length === 0 || this.props.comments[0].loading) {
       return <p className='loading'>loading...</p>
     }
-    return this.props.comments.map(comment => {
-      return <Comment key={uuid()} comment={comment} />;
+    return this.props.comments.map((comment, idx) => {
+      return <Comment key={uuid()} comment={comment} idx={idx} />;
     })
   }
 
   render() {
     return (
-      <ul className='comments-container'>
+      <ul className='comments-list'>
         {this.renderComments()}
       </ul>
     )

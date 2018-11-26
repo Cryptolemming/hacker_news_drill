@@ -1,4 +1,5 @@
 import React from 'react';
+import './HackerNewsDrill.css';
 import StoriesContainer from './StoriesContainer';
 
 export default () => {
